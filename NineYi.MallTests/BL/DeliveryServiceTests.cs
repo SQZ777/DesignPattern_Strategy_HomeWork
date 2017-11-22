@@ -7,48 +7,7 @@ namespace NineYi.Mall.BL.Tests
 {
     public class DeliveryServiceTests
     {
-        /// <summary>
-        /// 宅配資料For黑貓
-        /// </summary>
-        public static IEnumerable<object[]> DeliveryItemForTCat
-        {
-            get
-            {
-                return new[]
-                {
-                    new object[]
-                    {
-                        //// 要被計算的物件
-                        new DeliveryEntity()
-                        {
-                            ProductLength = 30,
-                            ProductWidth = 40,
-                            ProductHeight = 50,
-                            ProductWeight = 25,
-                            DeliveryType = DeliveryTypeEnum.TCat
-                        },
-                        //// 預期運費
-                        400d
-                    },
-                    new object[]
-                    {
-                        //// 要被計算的物件
-                        new DeliveryEntity()
-                        {
-                            ProductLength = 60,
-                            ProductWidth = 60,
-                            ProductHeight = 80,
-                            ProductWeight = 15,
-                            DeliveryType = DeliveryTypeEnum.TCat
-                        },
-                        //// 預期運費
-                        250d
-                    }
-                };
-            }
-        }
-
-        /// <summary>
+        /// <summary>a
         /// 宅配資料For大榮
         /// </summary>
         public static IEnumerable<object[]> DeliveryItemForKTJ
@@ -125,6 +84,47 @@ namespace NineYi.Mall.BL.Tests
                         },
                         //// 預期運費
                         316.8d
+                    }
+                };
+            }
+        }
+
+        /// <summary>
+        /// 宅配資料For黑貓
+        /// </summary>
+        public static IEnumerable<object[]> DeliveryItemForTCat
+        {
+            get
+            {
+                return new[]
+                {
+                    new object[]
+                    {
+                        //// 要被計算的物件
+                        new DeliveryEntity()
+                        {
+                            ProductLength = 30,
+                            ProductWidth = 40,
+                            ProductHeight = 50,
+                            ProductWeight = 25,
+                            DeliveryType = DeliveryTypeEnum.TCat
+                        },
+                        //// 預期運費
+                        400d
+                    },
+                    new object[]
+                    {
+                        //// 要被計算的物件
+                        new DeliveryEntity()
+                        {
+                            ProductLength = 60,
+                            ProductWidth = 60,
+                            ProductHeight = 80,
+                            ProductWeight = 15,
+                            DeliveryType = DeliveryTypeEnum.TCat
+                        },
+                        //// 預期運費
+                        250d
                     }
                 };
             }
