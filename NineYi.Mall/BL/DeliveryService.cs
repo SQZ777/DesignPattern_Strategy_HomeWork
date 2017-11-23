@@ -22,17 +22,17 @@ namespace NineYi.Mall.BL
 
             if (deliveryItem.DeliveryType == DeliveryTypeEnum.TCat)
             {
-                deliveryItem.SetDeliveryType(new TcatCaculate());
+                deliveryItem.SetDeliveryType(new Tcat());
                 return deliveryItem.Caculate(deliveryItem);
             }
             else if (deliveryItem.DeliveryType == DeliveryTypeEnum.KTJ)
             {
-                deliveryItem.SetDeliveryType(new KTJCaculate());
+                deliveryItem.SetDeliveryType(new KTJ());
                 return deliveryItem.Caculate(deliveryItem);
             }
             else if (deliveryItem.DeliveryType == DeliveryTypeEnum.PostOffice)
             {
-                deliveryItem.SetDeliveryType(new PostOfficeCaculate());
+                deliveryItem.SetDeliveryType(new PostOffice());
                 return deliveryItem.Caculate(deliveryItem);
             }
             else
