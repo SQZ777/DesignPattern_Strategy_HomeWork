@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="BE\DeliveryEntity.cs" />
     <Compile Include="BE\DeliveryTypeEnum.cs" />
+    <Compile Include="Interfaces\IAction.cs" />
     <Compile Include="BE\KTJ.cs" />
     <Compile Include="BE\PostOffice.cs" />
     <Compile Include="BE\Tcat.cs" />

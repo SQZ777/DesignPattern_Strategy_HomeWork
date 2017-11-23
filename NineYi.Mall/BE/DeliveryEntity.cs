@@ -2,10 +2,7 @@
 
 namespace NineYi.Mall.BE
 {
-    public interface IAction
-    {
-        double Caculate(DeliveryEntity deliveryItem);
-    }
+
 
     /// <summary>
     /// 宅配資料
