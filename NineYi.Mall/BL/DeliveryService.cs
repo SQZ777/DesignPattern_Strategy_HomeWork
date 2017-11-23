@@ -20,47 +20,20 @@ namespace NineYi.Mall.BL
                 throw new ArgumentException("請檢查 deliveryItem 參數");
             }
 
-            var fee = default(double);
             if (deliveryItem.DeliveryType == DeliveryTypeEnum.TCat)
             {
-                var weight = deliveryItem.ProductWeight;
-                if (weight > 20)
-                {
-                    fee = 400d;
-                }
-                else
-                {
-                    fee = 100 + weight * 10;
-                }
-                return fee;
+                deliveryItem.SetDeliveryType(new TcatCaculate());
+                return deliveryItem.Caculate(deliveryItem);
             }
             else if (deliveryItem.DeliveryType == DeliveryTypeEnum.KTJ)
             {
-                var length = deliveryItem.ProductLength;
-                var width = deliveryItem.ProductWidth;
-                var height = deliveryItem.ProductHeight;
-
-                var size = length * width * height;
-
-                if (length > 50 || width > 50 || height > 50)
-                {
-                    fee = size * 0.00001 * 110 + 50;
-                }
-                else
-                {
-                    fee = size * 0.00001 * 120;
-                }
-
-                return fee;
+                deliveryItem.SetDeliveryType(new KTJCaculate());
+                return deliveryItem.Caculate(deliveryItem);
             }
             else if (deliveryItem.DeliveryType == DeliveryTypeEnum.PostOffice)
             {
-                var length = deliveryItem.ProductLength;
-                var width = deliveryItem.ProductWidth;
-                var height = deliveryItem.ProductHeight;
-                var sizeFee = length * width * height * 0.00001 * 110;
-                var weightFee = deliveryItem.ProductWeight * 10 + 80;
-                return sizeFee > weightFee ? sizeFee : weightFee;
+                deliveryItem.SetDeliveryType(new PostOfficeCaculate());
+                return deliveryItem.Caculate(deliveryItem);
             }
             else
             {
