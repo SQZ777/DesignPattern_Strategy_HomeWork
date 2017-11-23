@@ -40,11 +40,20 @@ namespace NineYi.Mall.BE
         /// </summary>
         public double ProductWidth { get; set; }
 
+        /// <summary>
+        /// 計算
+        /// </summary>
+        /// <param name="deliveryItem"></param>
+        /// <returns></returns>
         public double Caculate(DeliveryEntity deliveryItem)
         {
             return _action.Caculate(deliveryItem);
         }
 
+        /// <summary>
+        /// 設定動作類型
+        /// </summary>
+        /// <param name="iAction"></param>
         public void SetDeliveryType(IAction iAction)
         {
             _action = iAction;

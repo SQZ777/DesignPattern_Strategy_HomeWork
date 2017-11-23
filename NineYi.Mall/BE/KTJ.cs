@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace NineYi.Mall.BE
 {
+    /// <summary>
+    /// 大榮貨運
+    /// </summary>
     public class KTJ : IAction
     {
+        /// <summary>
+        /// 大榮的計算
+        /// </summary>
+        /// <param name="deliveryItem"></param>
+        /// <returns></returns>
         public double Caculate(DeliveryEntity deliveryItem)
         {
             var length = deliveryItem.ProductLength;
